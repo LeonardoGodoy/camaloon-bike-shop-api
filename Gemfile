@@ -27,6 +27,7 @@ group :development, :test do
   gem 'awesome_print', '~> 1.9.2'
   gem 'annotate', '~> 3.1.0'
   gem 'rspec-rails', '~> 4.1.0'
+  gem 'factory_bot_rails', '~> 6.1.0'
 end
 
 group :development do
