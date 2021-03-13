@@ -1,24 +1,25 @@
-# README
+# Camaloon Bike Shop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was built as a technical test for a fullsatack position at Camaloon.
 
-Things you may want to cover:
+### Data modeling documentation
+   To check all the datails about the data modeling process
+   [click right here](https://github.com/LeonardoGodoy/camaloon-bike-shop-api/blob/master/docs/data-modeling-2.md).
+   You can access de [Entity Relationship Diagram (ERD)]() as well.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
+### Setup instructons
 * Database creation
 
-* Database initialization
+```bash
+bundle exec rails db:create db:migrate db:seed
+```
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle exec rspec spec
+```
 
 * Deployment instructions
+  - TODO
 
-* ...
