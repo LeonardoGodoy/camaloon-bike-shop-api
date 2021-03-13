@@ -12,4 +12,6 @@
 class Category < ApplicationRecord
   has_many :products
   has_many :properties
+
+  validates :name, presence: true
 end

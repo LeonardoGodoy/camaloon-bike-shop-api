@@ -25,4 +25,17 @@
 class Property < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :product, optional: true
+
+  validates :title, :values, presence: true
+
+  validates :title, uniqueness: { scope: :category_id }, if: :category_property?
+  validates :title, uniqueness: { scope: :product_id }, if: :product_property?
+
+  def category_property?
+    category.present?
+  end
+
+  def product_property?
+    product.present?
+  end
 end
