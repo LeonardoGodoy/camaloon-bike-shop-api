@@ -7,3 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Customer.create(name: 'Camaloon Customer', email: 'camaloon_customer@gmail.com')
+
+data = {
+  name: 'Speed Bycicle',
+  properties: [
+    { title: 'wheel size', values: ['15', '17', '19'] },
+    { title: 'rim color', values: ['blue', 'black', 'spotted'] },
+  ]
+}
+create_category = CreateCategory.new(data)
+create_category.perform
+
+data = {
+  category_id: create_category.category.id,
+  title: 'Speed Bycicle PRO 2.0',
+  description: 'Awesome product',
+  properties: [
+    { title: 'wheel size', values: ['15', '17', '19'] },
+    { title: 'rim color', values: ['blue', 'black', 'spotted'] },
+    { title: 'saddle color', values: ['black', 'blue', 'brown'] }
+  ]
+}
+CreateProduct.new(data).perform
+
+data = {
+  category_id: create_category.category.id,
+  title: 'Speed Bycicle PRO 2.5',
+  description: 'Awesome product',
+  properties: [
+    { title: 'wheel size', values: ['19', '21'] },
+    { title: 'rim color', values: ['blue', 'black'] },
+    { title: 'saddle color', values: ['blue', 'black', 'purple'] }
+  ]
+}
+CreateProduct.new(data).perform
