@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
       resources :categories, only: %i(index show create)
+      resources :products, only: %i(index show create)
     end
   end
 end
