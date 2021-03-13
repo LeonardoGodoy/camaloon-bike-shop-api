@@ -1,11 +1,9 @@
 # Camaloon Bike Shop
 
 This project was built as a technical test for a fullsatack position at Camaloon.
-
 ### Data modeling documentation
-   To check all the datails about the data modeling process
-   [click right here](https://github.com/LeonardoGodoy/camaloon-bike-shop-api/blob/master/docs/data-modeling-2.md).
-   You can access de [Entity Relationship Diagram (ERD)]() as well.
+   To check all the datails about the hole process you can read the 
+   [data modeling introduction]((https://github.com/LeonardoGodoy/camaloon-bike-shop-api/blob/master/docs/data_modeling_introduction.md)). There I described my entire approach and some datails about how I progressed. If you want the visual final version, you can access the [Entity Relationship Diagram (ERD)]() as well.
 
 ### Setup instructons
 * Database creation
