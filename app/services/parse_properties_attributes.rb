@@ -3,9 +3,9 @@
 class ParsePropertiesAttributes
   attr_reader :property_source
 
-  ACCEPTABLE_ATTRIBUTES = [
-    :title,
-    :values
+  ACCEPTABLE_ATTRIBUTES = %i[
+    title
+    values
   ].freeze
 
   def self.parse_property_attributes(property_attributes)

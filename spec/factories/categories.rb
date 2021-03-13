@@ -2,10 +2,9 @@
 
 # == Schema Information
 #
-# Table name: customers
+# Table name: categories
 #
 #  id         :uuid             not null, primary key
-#  email      :string
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

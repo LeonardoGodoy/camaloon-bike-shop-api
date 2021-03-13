@@ -8,9 +8,9 @@ RSpec.describe CreateCategory do
       params = {
         name: 'Speed Bycicle',
         properties: [
-          { title: 'wheel size', values: ['15', '17', '19'] },
-          { title: 'rim color', values: ['blue', 'black', 'spotted'] },
-          { title: 'saddle color', values: ['orange', 'black'] }
+          { title: 'wheel size', values: %w[15 17 19] },
+          { title: 'rim color', values: %w[blue black spotted] },
+          { title: 'saddle color', values: %w[orange black] }
         ]
       }
       service = described_class.new(params)

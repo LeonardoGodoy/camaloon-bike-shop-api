@@ -11,8 +11,8 @@ RSpec.describe CreateProduct do
         title: 'Specific Speed Bycicle',
         description: 'A great product.',
         properties: [
-          { title: 'wheel size', values: ['15', '17'] },
-          { title: 'rim color', values: ['black', 'spotted', 'red'] }
+          { title: 'wheel size', values: %w[15 17] },
+          { title: 'rim color', values: %w[black spotted red] }
         ]
       }
       service = described_class.new(params)
