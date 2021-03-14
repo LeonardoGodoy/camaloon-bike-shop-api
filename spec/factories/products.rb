@@ -2,13 +2,22 @@
 
 # == Schema Information
 #
-# Table name: customers
+# Table name: products
 #
-#  id         :uuid             not null, primary key
-#  email      :string
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :uuid             not null, primary key
+#  description :string
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :uuid
+#
+# Indexes
+#
+#  index_products_on_category_id  (category_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (category_id => categories.id)
 #
 FactoryBot.define do
   factory :product do
