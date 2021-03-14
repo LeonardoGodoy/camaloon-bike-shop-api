@@ -3,6 +3,8 @@
 module Api
   module V1
     class ProductsController < ApiController
+      before_action :check_product, only: %i[show]
+
       def index
         products = Product.all
 
@@ -10,8 +12,6 @@ module Api
       end
 
       def show
-        product = Product.find_by(id: params[:id])
-
         render json: product, status: :ok
       end
 
@@ -26,8 +26,20 @@ module Api
 
       private
 
+      def product
+        @product ||= Product.find_by(id: params[:id])
+      end
+
       def product_attributes
         params.permit(:title, :description, properties: [:title, { values: [] }])
+      end
+
+      def product_version
+        @product_version ||= ProductVersion.find_by(id: params[:id])
+      end
+
+      def check_product
+        check(:product)
       end
     end
   end
