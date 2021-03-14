@@ -21,5 +21,9 @@
 #
 class ProductVersionSerializer < ActiveModel::Serializer
   attributes :id, :created_at, :updated_at,
-             :enabled, :property_combination
+             :enabled, :disabled, :property_combination
+
+  def disabled
+    object.disabled?
+  end
 end
