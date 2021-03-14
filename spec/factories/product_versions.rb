@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: product_versions
@@ -19,11 +17,8 @@
 #
 #  fk_rails_...  (product_id => products.id)
 #
-class ProductVersion < ApplicationRecord
-  belongs_to :product
-  has_many :property_values, class_name: 'ProductVersionPropertyValue'
-
-  def disabled?
-    !enabled?
+FactoryBot.define do
+  factory :product_version do
+    enabled { true }
   end
 end
