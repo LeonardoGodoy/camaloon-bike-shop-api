@@ -11,6 +11,7 @@ class CreateProduct
   def perform
     product.save
     product.properties.create(properties_attributes)
+    generate_product_versions
   end
 
   def product
@@ -27,7 +28,7 @@ class CreateProduct
     {
       title: attributes[:title],
       description: attributes[:description],
-      category_id: category.id
+      category_id: category.try(:id)
     }
   end
 
@@ -37,5 +38,9 @@ class CreateProduct
 
   def properties_attributes
     properties_parser.parse_attributes!
+  end
+
+  def generate_product_versions
+    GenerateProductVersions.new(product: product).perform
   end
 end
