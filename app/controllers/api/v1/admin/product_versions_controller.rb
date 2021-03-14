@@ -4,7 +4,7 @@ module Api
   module V1
     module Admin
       class ProductVersionsController < AdminApiController
-        before_action :check_product, only: %i[enable disable]
+        before_action :check_product
         before_action :check_product_version, only: %i[enable disable]
 
         def index
