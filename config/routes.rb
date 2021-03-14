@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
       resources :categories, only: %i(index show create)
-      resources :products, only: %i(index show create)
+      resources :products, only: %i(index show create) do
+        resources :product_versions, only: %i(index) do
+          post '/enable', to: 'product_versions#enable'
+          post '/disable', to: 'product_versions#disable'
+        end
+      end
     end
   end
 end
