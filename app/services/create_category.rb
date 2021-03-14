@@ -17,7 +17,7 @@ class CreateCategory
     @category ||= Category.new(category_attributes)
   end
 
-  def properties_raw_attributes
+  def raw_properties_attributes
     attributes[:properties]
   end
 

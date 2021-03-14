@@ -17,7 +17,7 @@ class ParsePropertiesAttributes
   end
 
   def attributes
-    property_source.properties_raw_attributes
+    property_source.raw_properties_attributes
   end
 
   def parse_attributes!
