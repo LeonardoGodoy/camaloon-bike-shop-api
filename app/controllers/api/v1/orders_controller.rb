@@ -12,7 +12,9 @@ module Api
       end
 
       def show
-        render json: order, include: { order_items: :product_version }, status: :ok
+        include_options = { order_items: %i[product product_version] }
+
+        render json: order, include: include_options, status: :ok
       end
 
       def create

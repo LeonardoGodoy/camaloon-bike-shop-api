@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: order_items
@@ -24,7 +26,8 @@
 #
 class OrderItemSerializer < ActiveModel::Serializer
   attributes :id, :created_at, :updated_at,
-            :quantity
+             :quantity
 
+  belongs_to :product
   belongs_to :product_version
 end
