@@ -35,10 +35,6 @@ module Api
           params.permit(:title, :description, properties: [:title, { values: [] }])
         end
 
-        def product_version
-          @product_version ||= ProductVersion.find_by(id: params[:id])
-        end
-
         def check_product
           check(:product)
         end
