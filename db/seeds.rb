@@ -13,6 +13,7 @@ data = {
   properties: [
     { title: 'wheel size', values: ['15', '17', '19'] },
     { title: 'rim color', values: ['blue', 'black', 'spotted'] },
+    { title: 'saddle color', values: ['black', 'blue', 'brown'] }
   ]
 }
 create_category = CreateCategory.new(data)
@@ -36,8 +37,7 @@ data = {
   description: 'Awesome product',
   properties: [
     { title: 'wheel size', values: ['19', '21'] },
-    { title: 'rim color', values: ['blue', 'black'] },
-    { title: 'saddle color', values: ['blue', 'black', 'purple'] }
+    { title: 'rim color', values: ['blue', 'black', 'orange'] }
   ]
 }
 CreateProduct.new(data).perform
