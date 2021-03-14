@@ -4,11 +4,12 @@
 #
 # Table name: product_versions
 #
-#  id         :uuid             not null, primary key
-#  enabled    :boolean
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  product_id :uuid             not null
+#  id                   :uuid             not null, primary key
+#  enabled              :boolean
+#  property_combination :jsonb
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  product_id           :uuid             not null
 #
 # Indexes
 #
