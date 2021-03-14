@@ -13,7 +13,9 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :products, only: %i(index show)
+      resources :products, only: %i(index show) do
+        resources :product_versions, only: %i(index)
+      end
     end
   end
 end
