@@ -2,19 +2,19 @@
 
 require 'rails_helper'
 
-RSpec.describe GenerateProductVersions do
-  class CustomGenerator
-    def initialize(combinations = [])
-      @combinations = combinations
-    end
-
-    def perform; end
-
-    def property_combinations
-      @combinations
-    end
+class CustomGenerator
+  def initialize(combinations = [])
+    @combinations = combinations
   end
 
+  def perform; end
+
+  def property_combinations
+    @combinations
+  end
+end
+
+RSpec.describe GenerateProductVersions do
   describe '#perform' do
     context 'without any combination' do
       it 'does not create versions' do
