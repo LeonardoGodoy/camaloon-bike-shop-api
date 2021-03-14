@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  api:
+    v1:
+      error_messages:
+        record_not_found: 'Record not found'
+        unauthorized: 'User unauthorized'
