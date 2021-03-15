@@ -14,13 +14,25 @@ You can check the [system description](https://drive.google.com/file/d/1scSCrF8Y
 
 #### Identified Requirements
 
-(TODO: Describe requirements)
-##### for admins
+- Products have custom properties.
+  - Ex: a bike has wheel size and color.
+- Each property has a set of possible values.
+  - Ex: the wheel size could be 17 or 21 inches.
+- Properties may depend on other properties' values.
+  Ex: If the wheel size is 21 the only available color is blue.
 
-- Product/Properties management
-##### for customers
+#### Proposed features
+  - Categories management.
+    - Config properties and value sets to share with products.
 
--  Habilty to order goods.
+  - Products management.
+    - Config custom properties for each product.
+    - Config custom properties sets.
+    - Import properties from categories.
+    - Import properties from other products.
+
+  - Products versions management.
+    - Enable/Disable specific properties availability combination.
 ### Low fidelity prototype
 
 Due to the nature of this project, I designed the main views on a piece of paper. In a normal situation, I would use a tool like [miro](https://miro.com/) to do it.
