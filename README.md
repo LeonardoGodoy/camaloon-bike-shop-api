@@ -16,10 +16,13 @@ You can check the [system description](https://drive.google.com/file/d/1scSCrF8Y
 
 - Products have custom properties.
   - Ex: a bike has wheel size and color.
+
 - Each property has a set of possible values.
   - Ex: the wheel size could be 17 or 21 inches.
+
 - Properties may depend on other properties' values.
-  Ex: If the wheel size is 21 the only available color is blue.
+
+  - Ex: If the wheel size is 21 the only available color is blue.
 
 #### Proposed features
   - Categories management.
