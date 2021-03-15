@@ -1,5 +1,10 @@
-# Application Programming Interface (API) Scratch
+# Application Programming Interface (API)
 
+This document represents the first thoughts about the API main endpoints. It does not mean the final version will keep all of these ideas.
+
+To access the final structure you can download the [postman collection]().
+
+## Endpoints
 #### POST /category
 
 ```ruby
@@ -13,7 +18,7 @@
 }
 ```
 
-#### POST /category/:category_id/product
+#### POST /product
 
 ```ruby
 # body params
@@ -45,11 +50,27 @@
 
 #### POST /order
 
+- Option 1: Using the product version directly
+
 ```ruby
 # body params
 {
   product_id: 'product_1',
   product_version_id: 'product_version_1'.
   quantity: 1
+}
+```
+
+- Option 2: Using properties and its values
+
+```ruby
+# body params
+{
+  product_id: 'product_1',
+  quantity: 1,
+  property_values: [
+    { property_id: 'property_1', value: 'foo' },
+    { property_id: 'property_2', value: 'bar' }
+  ]
 }
 ```

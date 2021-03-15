@@ -58,12 +58,12 @@ PropertyValue
 ```
 
 #### Benefits
-    - Quite less joins to asamble the property options. Database performance and form rendering speed ehancement
-    - Ease to extand, example: if a property in the feature has ranges of possible values would be simple to custumize the value structure
+  - Fewer joins to assemble the property options. Database performance and form rendering speed enhancement.
+  - Ease to extend, for example: if a property in the feature has ranges of possible values would be simple to customize the value structure.
 
 #### Desadvantages
-    - Updates in values have to be propagated to its dependencies
-        - I considered it not that bad due to smaller frequency of product updates compared to product orders
+- Updates in values have to be propagated to their dependencies.
+  - I considered it not that bad due to the lower frequency of product updates compared to product orders.
 
 
 ---
@@ -107,7 +107,8 @@ has_many :values # <- target property values to be excluded
 { id: 'prop_dependency_1', property_id: 'prop_2', type: :value, target_property_id: 'prop_1' }
 ```
 
-### PropertyDependencyPropertyValues (join table between values and dependencies)
+### PropertyDependencyPropertyValues
+(join table between values and dependencies)
 
 ```ruby
 { property_dependency_id: 'prop_dependency_1', property_value_id: 'prop_value_1' }
