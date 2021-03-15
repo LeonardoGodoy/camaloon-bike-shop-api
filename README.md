@@ -35,6 +35,17 @@ Matching the main views/features, I started to model the [API endpoints](https:/
 
 To access the final structure you can download the [postman collection](https://drive.google.com/file/d/1p18LVHrn3GBpm0hzsjS3zSsS7fXqJz1U/view?usp=sharing).
 
+### TODO list
+
+- Validation handling on creation
+  - categories
+  - products
+  - orders
+
+- Order parser refactorying (WIP)
+- Product combination serialization refactorying
+- Organize services namespaces
+
 ### Setup instructons
 * Database creation
 
