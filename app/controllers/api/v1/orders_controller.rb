@@ -18,13 +18,30 @@ module Api
       end
 
       def create
-        # order = nil
-        # render json: order, status: :ok
+        attributes = order_attributes
+        attributes[:customer_id] = current_customer.id
 
-        head :ok
+        create_service = CreateOrder.new(attributes)
+        create_service.perform
+
+        # TODO: Check success
+
+        render json: create_service.order, status: :ok
       end
 
       private
+
+      def order_attributes
+        params.permit(order_items: order_items_attribute_names)
+      end
+
+      def order_items_attribute_names
+        [
+          :product_id,
+          :quantity,
+          { properties_values: %i[property_id value] }
+        ]
+      end
 
       def order
         @order ||= Order.find_by(id: params[:id])
