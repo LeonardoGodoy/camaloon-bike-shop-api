@@ -3,12 +3,6 @@
 class ParseOrderItemsAttributes
   attr_reader :order_items_source
 
-  ACCEPTABLE_ATTRIBUTES = %i[
-    quantity
-    product_id
-    properties_values
-  ].freeze
-
   def self.parse_order_item_attributes(order_item_attributes)
     properties_values = order_item_attributes[:properties_values]
     product = Product.find(order_item_attributes[:product_id])
