@@ -33,7 +33,7 @@ To check all the details about the whole process you can read the
 
 Matching the main views/features, I started to model the [API endpoints](https://github.com/LeonardoGodoy/camaloon-bike-shop-api/blob/master/docs/api_introduction.md) we would need. I considered using GraphQL but decided to make a restful API due to time constraints.
 
-To access the final structure you can download the [postman collection]().
+To access the final structure you can download the [postman collection](https://drive.google.com/file/d/1p18LVHrn3GBpm0hzsjS3zSsS7fXqJz1U/view?usp=sharing).
 
 ### Setup instructons
 * Database creation

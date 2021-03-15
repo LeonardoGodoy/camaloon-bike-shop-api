@@ -2,7 +2,7 @@
 
 This document represents the first thoughts about the API main endpoints. It does not mean the final version will keep all of these ideas.
 
-To access the final structure you can download the [postman collection]().
+To access the final structure you can download the [postman collection](https://drive.google.com/file/d/1p18LVHrn3GBpm0hzsjS3zSsS7fXqJz1U/view?usp=sharing).
 
 ## Endpoints
 #### POST /category
