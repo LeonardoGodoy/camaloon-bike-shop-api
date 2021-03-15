@@ -1,16 +1,15 @@
 # Data Modeling thoughts
 
 Plan and document the data modeling process while showing the main thoughts and concerns about it.
-This version was considered the better choice and documents the commited plans before implementation.
-
+This version was considered the better choice and documents the committed plans before implementation.
 ## How to read this document
 
-Bellow there are descriptions of entities, each one containing the following:
-- Main associations represented in active record notation.
-- The purpose of the structure (it's concept).
-- Observertions about the context it was planned and details to keep in mind during the development.
-- Some examples of data as a use simulation.
-    - All the examples have their ids with the name of it's model and an increasing number. In practice they will be **uuid** hashes.
+Bellow, there are descriptions of entities, each one containing the following:
+- Main associations represented with active record notation.
+- The purpose of the structure (its concept).
+- Observations about the context it was planned and details to keep in mind during the development.
+- Some examples of data as a simulation.
+    - All the examples have their ids with the name of their model and an increasing number. In practice, they will be **UUID** hashes.
 
 
 ## Entities
@@ -36,11 +35,11 @@ has_many :properties
 { id: 'category_2', name: 'Speed Bycicles' }
 ```
 ### Property
-The *Property* keeps the **customizable chacateristics** of products.
+The *Property* keeps the **customizable characteristics** of products.
 
 - We might copy category properties during the product creation to keep history.
 
-- We could add some matadata like value types to select a **validation strategy** in the future.
+- We could add some metadata like value types to select a **validation strategy** in the future.
 
 ```ruby
 belongs_to :product, optional: true
@@ -60,9 +59,9 @@ belongs_to :category, optional: true
 ```
 
 ### ProductVersion
-The *ProductVersion* keeps each **combination of chacateristics** (the order target). Here we would associate images and sku details.
+The *ProductVersion* keeps each **combination of characteristics** (the order target). Here we would associate images and SKU details.
 
-- We have the possibility to desable/enable specific combinations to make then unavailable.
+- We can disable/enable specific combinations to make them unavailable.
 
 ```ruby
 belongs_to :product
@@ -79,8 +78,8 @@ has_many :property_values, class_name: 'ProductVersionPropertyValue'
 ```
 
 ### ProductVersionPropertyValue
-The *ProductVersionPropertyValue* keeps track of a **specific product version chacateristic**.
-- This table tends to have loads of recods. So we have to keep things as simples as it can be.
+The *ProductVersionPropertyValue* keeps track of a **specific product version characteristic**.
+- This table tends to have loads of records. So we have to keep things as simples as they can be.
 - To decrease the number of hits in this table during the form building we could add a jsonb field in the product_version and update it only when the product changes.
 
 ```ruby
@@ -119,7 +118,7 @@ belongs_to :product_version
 ```
 
 ### Customer
-The *Customer* keeps **customers informations**.
+The *Customer* keeps **customer's information**.
 
 ```ruby
 has_many :orders
