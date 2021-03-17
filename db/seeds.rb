@@ -9,7 +9,7 @@
 Customer.create(name: 'Camaloon Customer', email: 'camaloon_customer@gmail.com')
 
 data = {
-  name: 'Speed Bycicle',
+  name: 'Speed Bicycle',
   properties: [
     { title: 'wheel size', values: ['15', '17', '19'] },
     { title: 'rim color', values: ['blue', 'black', 'spotted'] },
@@ -21,7 +21,7 @@ create_category.perform
 
 data = {
   category_id: create_category.category.id,
-  title: 'Speed Bycicle PRO 2.0',
+  title: 'Speed Bicycle PRO 2.0',
   description: 'Awesome product',
   properties: [
     { title: 'wheel size', values: ['15', '17', '19'] },
@@ -33,7 +33,7 @@ CreateProduct.new(data).perform
 
 data = {
   category_id: create_category.category.id,
-  title: 'Speed Bycicle PRO 2.5',
+  title: 'Speed Bicycle PRO 2.5',
   description: 'Awesome product',
   properties: [
     { title: 'wheel size', values: ['19', '21'] },

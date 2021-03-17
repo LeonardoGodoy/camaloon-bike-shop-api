@@ -20,8 +20,8 @@ The *Product* keeps a good the shop offers.
 belongs_to :category
 has_many :properties
 
-{ id: 'product_1', category_id: 'category_1', title: 'Montain Bycicle PRO 2.0' }
-{ id: 'product_2', category_id: 'category_2', title: 'Speed Bycicle XPTO' }
+{ id: 'product_1', category_id: 'category_1', title: 'Montain Bicycle PRO 2.0' }
+{ id: 'product_2', category_id: 'category_2', title: 'Speed Bicycle XPTO' }
 ```
 
 ### Category
@@ -31,8 +31,8 @@ The *Category* keeps **reusable properties**. These properties will be inherited
 has_many :products
 has_many :properties
 
-{ id: 'category_1', name: 'Montain Bycicles' }
-{ id: 'category_2', name: 'Speed Bycicles' }
+{ id: 'category_1', name: 'Montain Bicycles' }
+{ id: 'category_2', name: 'Speed Bicycles' }
 ```
 ### Property
 The *Property* keeps the **customizable characteristics** of products.
@@ -86,11 +86,11 @@ The *ProductVersionPropertyValue* keeps track of a **specific product version ch
 belongs_to :product_version
 belongs_to :property
 
-# The Montain Bycicle PRO 2.0 first available combination.
+# The Montain Bicycle PRO 2.0 first available combination.
 { id: 'pvpv_1', product_version_id: 'product_version_1', property_id: 'prop_5' value: '17' }
 { id: 'pvpv_2', product_version_id: 'product_version_1', property_id: 'prop_6' value: 'blue' }
 
-# The Montain Bycicle PRO 2.0 second available combination.
+# The Montain Bicycle PRO 2.0 second available combination.
 { id: 'pvpv_3', product_version_id: 'product_version_2', property_id: 'prop_5' value: '17' }
 { id: 'pvpv_4', product_version_id: 'product_version_2', property_id: 'prop_6' value: 'green' }
 ```

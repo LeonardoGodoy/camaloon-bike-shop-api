@@ -8,7 +8,7 @@ RSpec.describe CreateProduct do
       category = create(:category)
       params = {
         category_id: category.id,
-        title: 'Specific Speed Bycicle',
+        title: 'Specific Speed Bicycle',
         description: 'A great product.',
         properties: [
           { title: 'wheel size', values: %w[15 17] },

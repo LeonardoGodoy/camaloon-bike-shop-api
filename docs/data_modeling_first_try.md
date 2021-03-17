@@ -3,8 +3,8 @@
 ### Product
 
 ```ruby
-    { id: 'product_1', title: 'Bycicle X' }
-    { id: 'product_2', title: 'Bycicle Y' }
+    { id: 'product_1', title: 'Bicycle X' }
+    { id: 'product_2', title: 'Bicycle Y' }
 ```
 
 Order
@@ -73,8 +73,8 @@ PropertyValue
 ### Product
 
 ```ruby
-{ id: 'product_1', title: 'Bycicle X' }
-{ id: 'product_2', title: 'Bycicle Y' }
+{ id: 'product_1', title: 'Bicycle X' }
+{ id: 'product_2', title: 'Bicycle Y' }
 ```
 
 ### Property

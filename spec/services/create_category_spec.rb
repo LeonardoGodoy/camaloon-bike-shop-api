@@ -6,7 +6,7 @@ RSpec.describe CreateCategory do
   describe '#perform' do
     it 'creates a category and its properties' do
       params = {
-        name: 'Speed Bycicle',
+        name: 'Speed Bicycle',
         properties: [
           { title: 'wheel size', values: %w[15 17 19] },
           { title: 'rim color', values: %w[blue black spotted] },
