@@ -12,7 +12,7 @@ module Api
       end
 
       def show
-        render json: product, status: :ok
+        render json: product, include_disabled_versions: true, status: :ok
       end
 
       private

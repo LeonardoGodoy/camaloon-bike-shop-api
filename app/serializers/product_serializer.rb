@@ -23,5 +23,15 @@ class ProductSerializer < ActiveModel::Serializer
   attributes :id, :created_at, :updated_at,
              :title, :description
 
+  attribute :disabled_versions, if: :include_disabled_versions?
+
   has_many :properties
+
+  def disabled_versions
+    object.product_versions.where(enabled: false)
+  end
+
+  def include_disabled_versions?
+    @instance_options[:include_disabled_versions]
+  end
 end
