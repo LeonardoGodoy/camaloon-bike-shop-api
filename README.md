@@ -1,6 +1,6 @@
 # Camaloon Bike Shop
 
-This project was built as a technical test for a fullsatack position at Camaloon.
+This project was built as a technical test for a fullsatack position at Camaloon. It is composed of a [React JS application](https://github.com/LeonardoGodoy/camaloon-bike-shop-front) backed by a [Ruby on Rails API](https://github.com/LeonardoGodoy/camaloon-bike-shop-api).
 
 You can check the [system description](https://drive.google.com/file/d/1scSCrF8YyS4eB90vtcV8Yp-QFiSAlcxJ/view?usp=sharing) provided.
 
