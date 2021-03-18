@@ -9,9 +9,7 @@ module Api
         product_versions = product.product_versions
 
         status_filter = search_attributes.dig(:search, :enabled)
-        unless status_filter.nil?
-          product_versions = product_versions.where(enabled: status_filter)
-        end
+        product_versions = product_versions.where(enabled: status_filter) unless status_filter.nil?
 
         render json: product_versions, status: :ok
       end
