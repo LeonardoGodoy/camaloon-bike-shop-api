@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,36 +10,54 @@
 
 Customer.create(name: 'Camaloon Customer', email: 'camaloon_customer@gmail.com')
 
-data = {
-  name: 'Speed Bicycle',
-  properties: [
-    { title: 'wheel size', values: ['15', '17', '19'] },
-    { title: 'rim color', values: ['blue', 'black', 'spotted'] },
-    { title: 'saddle color', values: ['black', 'blue', 'brown'] }
-  ]
-}
-create_category = CreateCategory.new(data)
-create_category.perform
+content = File.read(Rails.root.join('db', 'seeds.json'))
+data = JSON.parse(content, symbolize_names: true)
 
-data = {
-  category_id: create_category.category.id,
-  title: 'Speed Bicycle PRO 2.0',
-  description: 'Awesome product',
-  properties: [
-    { title: 'wheel size', values: ['15', '17', '19'] },
-    { title: 'rim color', values: ['blue', 'black', 'spotted'] },
-    { title: 'saddle color', values: ['black', 'blue', 'brown'] }
-  ]
-}
-CreateProduct.new(data).perform
+def create_category(attributes)
+  create_category = CreateCategory.new(attributes.slice(:name, :properties))
+  create_category.perform
+  create_category.category
+end
 
-data = {
-  category_id: create_category.category.id,
-  title: 'Speed Bicycle PRO 2.5',
-  description: 'Awesome product',
-  properties: [
-    { title: 'wheel size', values: ['19', '21'] },
-    { title: 'rim color', values: ['blue', 'black', 'orange'] }
-  ]
-}
-CreateProduct.new(data).perform
+def create_product(category, attributes)
+  attributes[:category_id] = category.id
+  create_product = CreateProduct.new(attributes)
+  create_product.perform
+  create_product.product
+end
+
+def disable_combination(product, combination, properties)
+  properties_values = combination.map do |property_value|
+    title = property_value[:title]
+    value = property_value[:value]
+    { property_id: properties[title], value: value }
+  end
+
+  disable_version_combination(product, properties_values)
+end
+
+def disable_version_combination(product, properties_values)
+  finder_attributes = {
+    product: product,
+    properties_values: properties_values
+  }
+  version = FindProductVersionByPropertiesValues.new(finder_attributes).perform
+  DisableProductVersion.new(version).perform
+end
+
+data[:categories].each do |category_attributes|
+  category = create_category(category_attributes)
+
+  category_attributes[:products].each do |product_attributes|
+    product = create_product(category, product_attributes.except(:disabled_combinations))
+    properties = product.properties.inject({}) do |hash, property|
+      hash.merge(property.title => property.id)
+    end
+
+    next if product_attributes[:disabled_combinations].blank?
+
+    product_attributes[:disabled_combinations].each do |combination|
+      disable_combination(product, combination, properties)
+    end
+  end
+end

@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "name": "Road bike",
+      "properties": [
+        { "title": "wheel size", "values": ["15-inch", "17-inch", "19-inch"] },
+        { "title": "rim color", "values": ["blue", "black", "spotted"] },
+        { "title": "saddle color", "values": ["black", "blue", "brown"] }
+      ],
+      "products": [
+        {
+          "title": "Road bike PRO3",
+          "description": "Awesome product",
+          "properties": [
+            {
+              "title": "wheel size",
+              "values": ["15-inch", "17-inch", "19-inch"]
+            },
+            { "title": "rim color", "values": ["blue", "black", "spotted"] },
+            { "title": "saddle color", "values": ["black", "blue", "brown"] }
+          ],
+          "disabled_combinations": [
+            [
+              {
+                "title": "wheel size",
+                "value": "15-inch"
+              },
+              {
+                "title": "rim color",
+                "value": "blue"
+              },
+              {
+                "title": "saddle color",
+                "value": "black"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Road bike KTM3",
+          "description": "Awesome product",
+          "properties": [
+            { "title": "wheel size", "values": ["19-inch", "21-inch"] },
+            { "title": "rim color", "values": ["blue", "black", "orange"] }
+          ]
+        },
+        {
+          "title": "Road bike Camaloon",
+          "description": "Awesome product",
+          "properties": [
+            { "title": "wheel size", "values": ["17-inch", "19-inch", "21-inch"] },
+            { "title": "rim color", "values": ["black", "blue", "green"] }
+          ],
+          "disabled_combinations": [
+            [
+              {
+                "title": "wheel size",
+                "value": "17-inch"
+              },
+              {
+                "title": "rim color",
+                "value": "black"
+              }
+            ],
+            [
+              {
+                "title": "wheel size",
+                "value": "17-inch"
+              },
+              {
+                "title": "rim color",
+                "value": "blue"
+              }
+            ],
+            [
+              {
+                "title": "wheel size",
+                "value": "19-inch"
+              },
+              {
+                "title": "rim color",
+                "value": "black"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mountain bike",
+      "properties": [
+        { "title": "wheel size", "values": ["26-inch", "29-inch"] },
+        { "title": "rim color", "values": ["black", "gray"] },
+        { "title": "saddle color", "values": ["black", "gray"] }
+      ],
+      "products": [
+        {
+          "title": "Mountain ZTK2",
+          "description": "Awesome product",
+          "properties": [
+            { "title": "wheel size", "values": ["26-inch", "29-inch"] },
+            { "title": "rim color", "values": ["black", "gray"] },
+            { "title": "saddle color", "values": ["black", "gray"] }
+          ]
+        },
+        {
+          "title": "Mountain GT-12",
+          "description": "Awesome product",
+          "properties": [
+            {
+              "title": "wheel size",
+              "values": ["21-inch", "26-inch", "29-inch"]
+            },
+            { "title": "rim color", "values": ["black", "orange"] },
+            { "title": "saddle color", "values": ["black", "orange"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
