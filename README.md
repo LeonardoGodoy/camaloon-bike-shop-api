@@ -78,8 +78,3 @@ bundle exec rspec spec
 ```bash
 rubocop
 ```
-
-* Deployment instructions
-
-This project is not hosted so far.
-
