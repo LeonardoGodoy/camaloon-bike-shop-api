@@ -82,5 +82,7 @@ test:
 production:
   <<: *default
   database: camaloon_bike_shop_api_production
-  username: camaloon_bike_shop_api
-  password: <%= ENV['CAMALOON_BIKE_SHOP_API_DATABASE_PASSWORD'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
