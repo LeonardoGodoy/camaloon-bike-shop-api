@@ -32,7 +32,7 @@ module Api
         end
 
         def product_attributes
-          params.permit(:title, :description, properties: [:title, { values: [] }])
+          params.permit(:title, :description, :category_id, properties: [:title, { values: [] }])
         end
 
         def check_product
