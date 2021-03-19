@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Load DSL and set up stages
 require 'capistrano/setup'
 
@@ -37,9 +39,9 @@ set :rbenv_ruby, '2.6.5'
 install_plugin Capistrano::SCM::Git
 
 # puma
-install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma # Default puma tasks
 install_plugin Capistrano::Puma::Systemd
-install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
+install_plugin Capistrano::Puma::Nginx # if you want to upload a nginx site template
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
